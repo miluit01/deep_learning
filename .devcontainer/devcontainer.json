@@ -4,6 +4,7 @@
 	"terminal.integrated.shell.linux": "/bin/bash",
 	"extensions": [
 		"ms-python.python",
+		"ms-python.vscode-pylance"
 	],
 	"updateRemoteUserUID": true,
 	"runArgs": [
@@ -19,11 +20,6 @@
 		"--shm-size=2g",
 		"--name=nv-tf-2.0",
 	],
-	"settings": {
-		"python.pythonPath": "/usr/bin/python",
-            "python.languageServer": "Microsoft",
-		"python.autoComplete.addBrackets": true
-	},
 	"workspaceMount": "source=${localWorkspaceFolder},target=/${localWorkspaceFolderBasename}_data,type=bind,consistency=delegated",
 	"workspaceFolder": "/${localWorkspaceFolderBasename}_data"
 }
