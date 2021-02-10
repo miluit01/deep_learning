@@ -20,6 +20,11 @@
 		"--shm-size=2g",
 		"--name=nv-tf-2.0",
 	],
+	"settings": {
+		"python.languageServer": "Pylance",
+		"python.autoComplete.addBrackets": true,
+		"python.autoComplete.showAdvancedMembers": true
+	},
 	"workspaceMount": "source=${localWorkspaceFolder},target=/${localWorkspaceFolderBasename}_data,type=bind,consistency=delegated",
 	"workspaceFolder": "/${localWorkspaceFolderBasename}_data"
 }
