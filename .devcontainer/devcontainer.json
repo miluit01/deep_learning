@@ -1,0 +1,29 @@
+{
+	"name": "Deep Learning - NV tensorflow 2.0 docker",
+	"dockerFile": "Dockerfile",
+	"terminal.integrated.shell.linux": "/bin/bash",
+	"extensions": [
+		"ms-python.python",
+	],
+	"updateRemoteUserUID": true,
+	"runArgs": [
+		"-e", "DISPLAY=${env:DISPLAY}",
+		"-e", "NVIDIA_DRIVER_CAPABILITIES=all",
+		"-e", "NVIDIA_VISIBLE_DEVICES=all",
+		"-v", "/tmp/.X11-unix:/tmp/.X11-unix",
+		"-v", "${env:XAUTHORITY}:/root/.Xauthority",
+		"-v", "/etc/localtime:/etc/localtime:ro",
+		"--network=host",
+		"--gpus=all",
+		"--privileged",
+		"--shm-size=2g",
+		"--name=nv-tf-2.0",
+	],
+	"settings": {
+		"python.pythonPath": "/usr/bin/python",
+            "python.languageServer": "Microsoft",
+		"python.autoComplete.addBrackets": true
+	},
+	"workspaceMount": "source=${localWorkspaceFolder},target=/${localWorkspaceFolderBasename}_data,type=bind,consistency=delegated",
+	"workspaceFolder": "/${localWorkspaceFolderBasename}_data"
+}
